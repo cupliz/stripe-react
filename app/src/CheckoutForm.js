@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { CardElement, injectStripe } from 'react-stripe-elements';
 import axios from 'axios';
 import M from 'materialize-css';
-const ORIGIN = 'http://localhost:3000'
+const ORIGIN = process.env.REACT_APP_ORIGIN
 class CheckoutForm extends Component {
   constructor(props) {
     super(props);
