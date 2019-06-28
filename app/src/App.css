@@ -1,0 +1,234 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Stripe Styles */
+
+* {
+  font-family: Source Code Pro, Consolas, Menlo, monospace;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 5px 10px;
+}
+
+.field {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 0 10px;
+}
+
+.field.half-width {
+  width: 50%;
+}
+
+.field.quarter-width {
+  width: calc(25% - 10px);
+}
+
+.baseline {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+  background-color: #cfd7df;
+  transition: background-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+label {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 8px;
+  color: #cfd7df;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transform-origin: 0 50%;
+  cursor: text;
+  transition-property: color, transform;
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+input {
+  /* position: absolute; */
+  /* width: 100%;
+  left: 0;
+  bottom: 0;
+  padding-bottom: 7px; */
+  color: #fff;
+  /* background-color: transparent; */
+}
+
+.input::-webkit-input-placeholder {
+  color: transparent;
+  transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.input::-moz-placeholder {
+  color: transparent;
+  transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.input:-ms-input-placeholder {
+  color: transparent;
+  transition: color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.input.StripeElement {
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  will-change: opacity;
+}
+
+.input.focused,
+.input:not(.empty) {
+  opacity: 1;
+}
+
+.input.focused::-webkit-input-placeholder,
+.input:not(.empty)::-webkit-input-placeholder {
+  color: #cfd7df;
+}
+
+.input.focused::-moz-placeholder,
+.input:not(.empty)::-moz-placeholder {
+  color: #cfd7df;
+}
+
+.input.focused:-ms-input-placeholder,
+.input:not(.empty):-ms-input-placeholder {
+  color: #cfd7df;
+}
+
+.input.focused + label,
+.input:not(.empty) + label {
+  color: #aab7c4;
+  transform: scale(0.85) translateY(-25px);
+  cursor: default;
+}
+
+.input.focused + label {
+  color: #24b47e;
+}
+
+.input.invalid + label {
+  color: #ffa27b;
+}
+
+.input.focused + label + .baseline {
+  background-color: #24b47e;
+}
+
+.input.focused.invalid + label + .baseline {
+  background-color: #e25950;
+}
+
+input, button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border-style: none;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #e39f48;
+  transition: background-color 100000000s;
+  -webkit-animation: 1ms void-animation-out;
+}
+
+.StripeElement--webkit-autofill {
+  background: transparent !important;
+}
+
+input, button {
+  -webkit-animation: 1ms void-animation-out;
+}
+
+button {
+  display: block;
+  width: calc(100% - 30px);
+  height: 40px;
+  margin: 40px 15px 0;
+  background-color: #24b47e;
+  border-radius: 4px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.error svg {
+  margin-top: 0 !important;
+}
+
+.error svg .base {
+  fill: #e25950;
+}
+
+.error svg .glyph {
+  fill: #fff;
+}
+
+.error .message {
+  color: #e25950;
+}
+
+.success .icon .border {
+  stroke: #abe9d2;
+}
+
+.success .icon .checkmark {
+  stroke: #24b47e;
+}
+
+.success .title {
+  color: #32325d;
+  font-size: 16px !important;
+}
+
+.success .message {
+  color: #8898aa;
+  font-size: 13px !important;
+}
+
+.success .reset path {
+  fill: #24b47e;
+}
